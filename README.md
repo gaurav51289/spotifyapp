@@ -14,5 +14,5 @@ A MEAN stack app to search tracks form Spotify APIs
   ```
 * Start server
   ```
-  $ npm run start
+  $ npm start
   ```
