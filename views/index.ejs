@@ -61,16 +61,19 @@
             <thead>
               <tr class="success">
                 <th>
-                  <a ng-click="sortBy('name')">Track</a>
-                  <span class="sort-glyph" ng-show=" sortType === 'name' "><i ng-class="sortGlyph"></i></span>
+                  <a ng-click="sortBy('name')">Track
+                    <span class="sort-glyph" ng-show=" sortType === 'name' "><i ng-class="sortGlyph"></i></span>
+                  </a>
                 </th>
                 <th>
-                  <a ng-click="sortBy('album.name')">Album</a>
-                  <span class="sort-glyph" ng-show=" sortType === 'album.name' "><i ng-class="sortGlyph"></i></span>
+                  <a ng-click="sortBy('album.name')">Album
+                    <span class="sort-glyph" ng-show=" sortType === 'album.name' "><i ng-class="sortGlyph"></i></span>
+                  </a>
                 </th>
                 <th>
-                  <a ng-click="sortBy('artist[0].name')">Artist(s)</a>
-                  <span class="sort-glyph" ng-show=" sortType === 'artist[0].name' "><i ng-class="sortGlyph"></i></span>
+                  <a ng-click="sortBy('artist[0].name')">Artist(s)
+                    <span class="sort-glyph" ng-show=" sortType === 'artist[0].name' "><i ng-class="sortGlyph"></i></span>
+                  </a>
                 </th>
               </tr>
             </thead>

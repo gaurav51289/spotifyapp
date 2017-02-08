@@ -18,7 +18,9 @@ mainApp.controller('mainCtrl', function($scope, $http, $templateCache) {
     }
   }
 
-
+  $scope.sortGlyph = "glyphicon glyphicon-sort-by-alphabet";
+  $scope.reverse = false;
+  $scope.sortType = 'name';
   $scope.sortBy = function(type){
     $scope.reverse = ($scope.sortType === type) ? !$scope.reverse : false;
     $scope.sortType = type;
