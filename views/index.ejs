@@ -14,7 +14,6 @@
 
   <!-- SCRIPTS -->
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js'></script>
-  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
   <!-- Custom Scripts -->
   <script type="text/javascript" src="js/angular/mainApp.js"></script>
 
@@ -32,22 +31,61 @@
 <div id="myNav" class="overlay">
   <div class="container-fluid">
     <!-- Button to close the overlay navigation -->
-    <a href="javascript:void(0)" id="closebtn" class="closebtn" ng-click="closeNav()">&times;</a>
+    <a href="javascript:void(0)" id="closebtn" class="closebtn" ng-click="clickClose()">&times;</a>
     <!-- Overlay content -->
-    <div class="overlay-content inner-addon right-addon" ng-click="openNav()">
+    <div class="overlay-content inner-addon right-addon">
       <div class="col-md-11">
         <input id="search-box" class="search-box" type="text" placeholder="Search" ng-model="searchString" />
       </div>
       <div class="col-md-1">
-          <i ng-click="doSearch()" class="glyphicon glyphicon-search my-glyphicon"></i>
+          <i ng-click="clickSearch()" class="glyphicon glyphicon-search my-glyphicon"></i>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid">
-  <div ng-view></div>
-</div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="logo" href="#"><span class="navbar-title">Spotify Search App</span></a>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-11" id="search-results">
+
+      <table class="table table-hover">
+            <thead>
+              <tr class="success">
+                <th>
+                  Track
+                </th>
+                <th>
+                  Album
+                </th>
+                <th>
+                  Artist(s)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="track in tracks">
+                <td>
+                  {{track.name}}
+                </td>
+                <td>
+                  {{track.album.name}}
+                </td>
+                <td>
+                  <span ng-repeat="artist in track.artists">{{artist.name}}&nbsp;</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+
 
 
 

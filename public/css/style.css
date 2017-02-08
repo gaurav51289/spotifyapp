@@ -3,9 +3,14 @@ body{
   font-family: monospace;
 }
 
+.logo{
+  color: #05814c;
+  font-weight: bolder;
+}
 /* The Overlay (background) */
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    margin-top: 52px;
     height: 100%;
     width: 8%;
     position: fixed; /* Stay in place */
@@ -81,4 +86,12 @@ body{
 
 table{
   font-family: Gill Sans, sans-serif;
+}
+
+.navbar-title{
+  float: right;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 1.5em;
+  line-height: 20px;
 }
