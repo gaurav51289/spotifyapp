@@ -7,6 +7,11 @@ body{
   color: #05814c;
   font-weight: bolder;
 }
+
+.logo-img{
+  height: 50px;
+  width: 50px;
+}
 /* The Overlay (background) */
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
@@ -45,6 +50,7 @@ body{
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
+    cursor: pointer !important;
 }
 
 /* Position the close button (top right corner) */
@@ -54,6 +60,10 @@ body{
     right: 45px;
     font-size: 60px;
     display: none;
+}
+
+.sort-glyph{
+  margin-left: 10px;
 }
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
@@ -75,6 +85,22 @@ body{
   display: none;
 }
 
+input::-webkit-input-placeholder {
+  color: rgba(60, 118, 61, 0.74) !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+  color: rgba(60, 118, 61, 0.74) !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+  color: rgba(60, 118, 61, 0.74) !important;
+}
+
+input:-ms-input-placeholder {
+  color: rgba(60, 118, 61, 0.74) !important;
+}
+
 .search-box:focus{
   outline: none;
 }
@@ -86,6 +112,11 @@ body{
 
 table{
   font-family: Gill Sans, sans-serif;
+  margin-top: 55px;
+}
+
+th a:hover{
+  cursor: pointer;
 }
 
 .navbar-title{

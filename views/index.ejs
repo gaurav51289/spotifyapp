@@ -33,25 +33,27 @@
     <!-- Button to close the overlay navigation -->
     <a href="javascript:void(0)" id="closebtn" class="closebtn" ng-click="clickClose()">&times;</a>
     <!-- Overlay content -->
-    <div class="overlay-content inner-addon right-addon">
-      <div class="col-md-11">
-        <input id="search-box" class="search-box" type="text" placeholder="Search" ng-model="searchString" />
-      </div>
-      <div class="col-md-1">
+    <form ng-submit="clickSearch()">
+      <div class="overlay-content inner-addon right-addon">
+        <div class="col-md-11">
+          <input id="search-box" class="search-box" type="text" placeholder="Search Tracks" ng-model="searchString" />
+        </div>
+        <div class="col-md-1">
           <i ng-click="clickSearch()" class="glyphicon glyphicon-search my-glyphicon"></i>
+        </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="logo" href="#"><span class="navbar-title">Spotify Search App</span></a>
+        <a class="logo" href="#"><span><img class="logo-img" src="images/logo.jpg"/></span><span class="navbar-title">Spotify Search App</span></a>
       </div>
     </div>
   </nav>
-  <div class="row">
+  <div class="row container-fluid">
     <div class="col-md-1"></div>
     <div class="col-md-11" id="search-results">
 
@@ -59,18 +61,21 @@
             <thead>
               <tr class="success">
                 <th>
-                  Track
+                  <a ng-click="sortBy('name')">Track</a>
+                  <span class="sort-glyph" ng-show=" sortType === 'name' "><i ng-class="sortGlyph"></i></span>
                 </th>
                 <th>
-                  Album
+                  <a ng-click="sortBy('album.name')">Album</a>
+                  <span class="sort-glyph" ng-show=" sortType === 'album.name' "><i ng-class="sortGlyph"></i></span>
                 </th>
                 <th>
-                  Artist(s)
+                  <a ng-click="sortBy('artist[0].name')">Artist(s)</a>
+                  <span class="sort-glyph" ng-show=" sortType === 'artist[0].name' "><i ng-class="sortGlyph"></i></span>
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="track in tracks">
+              <tr ng-repeat="track in tracks | orderBy:sortType:reverse">
                 <td>
                   {{track.name}}
                 </td>

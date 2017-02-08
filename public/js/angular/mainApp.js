@@ -18,6 +18,19 @@ mainApp.controller('mainCtrl', function($scope, $http, $templateCache) {
     }
   }
 
+
+  $scope.sortBy = function(type){
+    $scope.reverse = ($scope.sortType === type) ? !$scope.reverse : false;
+    $scope.sortType = type;
+
+    if($scope.reverse){
+      $scope.sortGlyph = "glyphicon glyphicon-sort-by-alphabet-alt";
+    }else{
+      $scope.sortGlyph = "glyphicon glyphicon-sort-by-alphabet";
+    }
+  }
+
+
   var getDataFromSpotify = function(searchString){
     $scope.url = 'https://api.spotify.com/v1/search?q=' + searchString + '&type=track&limit=50';
     $http(
