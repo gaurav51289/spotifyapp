@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html  ng-app="mainApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spotify App</title>
+
+
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+
+  <!-- SCRIPTS -->
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js'></script>
+  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+  <!-- Custom Scripts -->
+  <script type="text/javascript" src="js/angular/mainApp.js"></script>
+
+
+
+</head>
+
+<body ng-controller="mainCtrl">
+
+  <!-- Use any element to open/show the overlay navigation menu -->
+  <!-- <div class="sidebar">
+  <span class="glyphicon glyphicon-search my-glyphicon" onclick="openNav()"></span>
+</div> -->
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+  <div class="container-fluid">
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" id="closebtn" class="closebtn" ng-click="closeNav()">&times;</a>
+    <!-- Overlay content -->
+    <div class="overlay-content inner-addon right-addon" ng-click="openNav()">
+      <div class="col-md-11">
+        <input id="search-box" class="search-box" type="text" placeholder="Search" ng-model="searchString" />
+      </div>
+      <div class="col-md-1">
+          <i ng-click="doSearch()" class="glyphicon glyphicon-search my-glyphicon"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div ng-view></div>
+</div>
+
+
+
+
+</body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>
